@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.event.KeyListener;
+
 public class Maze {
     int x;
     int y;
