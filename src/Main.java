@@ -1,44 +1,30 @@
-import java.awt.event.KeyEvent;
+import java.sql.SQLOutput;
 
 public class Main {
 
     static int playerX = 0;
+    static int oldPlayerX = 0;
     static int playerY = 0;
-    int[][] player = new int[playerX][playerY];
+    static int oldPlayerY = 0;
     static Maze maze1 = new Maze(4,4);
-    public static void keyPressed(KeyEvent evt) {
-    int key = evt.getKeyCode();
-    if (key == KeyEvent.VK_LEFT)
-    {
-    playerX--;
-    maze1.getMap();
-    }
-    if (key == KeyEvent.VK_RIGHT)
-    {playerX++;
-    maze1.getMap();
-    }
-    if (key == KeyEvent.VK_UP)
-    {playerY--;
-    maze1.getMap();
-    }
-    if (key == KeyEvent.VK_DOWN)
-    {playerY++;
-    maze1.getMap();
-    }
-
-
-    }
-
-    static public void main(String[] args) throws InterruptedException {
-
-    maze1.mazeMap[playerX][playerY] = 3;
-    maze1.getMap();
-        Thread.currentThread().join();
+    static int exitCondition = 0;
+    static public void main(String[] args) {
+       while(exitCondition < 1)
+       {
+           maze1.mazeMap[playerY][playerX] = 3;
+           maze1.getMap();
+           MoveScanner.Scan();
+           maze1.resetPath();
+           RunExecution.runExe();
+           maze1.getMap();
+       }
 
 
 
 
     }
 }
+
+
 
 

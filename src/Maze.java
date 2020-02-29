@@ -40,4 +40,10 @@ public class Maze {
         }
 
     }
+
+    void resetPath()
+    {
+        Main.oldPlayerX = Main.playerX;
+        Main.oldPlayerY = Main.playerY;
+    }
 }
