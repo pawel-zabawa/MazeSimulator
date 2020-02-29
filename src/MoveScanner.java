@@ -32,14 +32,6 @@ public class MoveScanner {
                 case "down" : down = true;
                 case "exit" : exitState = true;
 
-                /*if (moveScan.nextLine().equals("right")) right = true;
-                else if (moveScan.nextLine().equals("left")) left = true;
-                else if (moveScan.nextLine().equals("up")) up = true;
-                else if (moveScan.nextLine().equals("down")) down = true;
-                else if (moveScan.nextLine().equals("exit")) exitState = true;
-                else System.out.println(badWord);
-
-                 */
             }
         }
 

@@ -16,7 +16,7 @@ public class Main {
            MoveScanner.Scan();
            maze1.resetPath();
            RunExecution.runExe();
-           maze1.getMap();
+
        }
 
 
