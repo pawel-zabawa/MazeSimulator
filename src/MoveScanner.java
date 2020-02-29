@@ -17,6 +17,7 @@ public class MoveScanner {
             right = false;
             up = false;
             down = false;
+            exitState = false;
         }
         static void Scan()
         {
@@ -31,6 +32,7 @@ public class MoveScanner {
                 case "up" : up = true;
                 case "down" : down = true;
                 case "exit" : exitState = true;
+                default : System.out.println(badWord);
 
             }
         }

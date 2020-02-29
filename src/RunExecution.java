@@ -1,10 +1,10 @@
 public class RunExecution {
 static void runExe()
 {
-    if (MoveScanner.right == true) Main.playerX++;
-    else if (MoveScanner.left == true) Main.playerX--;
-    else if (MoveScanner.up == true) Main.playerY--;
-    else if (MoveScanner.down == true) Main.playerY++;
+    if (MoveScanner.right == true) {if (Main.playerX < Main.maze1.mazeMap.length - 1) Main.playerX++; else System.out.println("sciana jebaku"); }
+    else if (MoveScanner.left == true) {if (Main.playerX != 0) Main.playerX--; else System.out.println("sciana jebaku"); }
+    else if (MoveScanner.up == true){if (Main.playerY != 0) Main.playerY--; else System.out.println("sciana jebaku"); }
+    else if (MoveScanner.down == true) {if (Main.playerY < Main.maze1.mazeMap.length - 1) Main.playerY++; else System.out.println("sciana jebaku"); }
     else if (MoveScanner.exitState == true)
     {
         System.out.println(MoveScanner.exit);
