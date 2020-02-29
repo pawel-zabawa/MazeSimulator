@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+
 
 public class Main {
 
@@ -17,6 +17,7 @@ public class Main {
             MoveScanner.Scan();
             maze1.resetPath();
             RunExecution.runExe();
+
 
         }
     }

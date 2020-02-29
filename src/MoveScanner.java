@@ -32,8 +32,6 @@ public class MoveScanner {
                 case "up" : up = true;
                 case "down" : down = true;
                 case "exit" : exitState = true;
-                default : System.out.println(badWord);
-
             }
         }
 
