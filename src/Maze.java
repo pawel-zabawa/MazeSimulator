@@ -12,7 +12,7 @@ public class Maze {
         this.mazeMap = new String[y][x];
         for (int i = 0; i < y ; i++) {
             for (int j = 0; j < x ; j++) {
-                this.mazeMap[i][j] = " ";
+                this.mazeMap[i][j] = "?";
             }
         }
 

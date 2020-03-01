@@ -2,11 +2,11 @@
 
 public class Main {
 
-    static int playerX = 5;
+    static int playerX = 10;
     static int oldPlayerX = 0;
-    static int playerY = 5;
+    static int playerY = 10;
     static int oldPlayerY = 0;
-    static Maze maze1 = new Maze(10,10);
+    static Maze maze1 = new Maze(20,20);
     static int exitCondition = 0;
     static void startPositionAccess()
     {
@@ -23,6 +23,7 @@ public class Main {
             Generator.autoStep();
             maze1.getMap();
             System.out.println("");
+
             System.out.println("---------------------------------------------");
             //MoveScanner.Scan();
             //maze1.resetPath();
