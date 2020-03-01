@@ -4,7 +4,7 @@ static void runExe()
     if (MoveScanner.right == true)
     {
 
-        if ((Main.playerX < Main.maze1.mazeMap.length - 1) && Main.maze1.mazeMap[Main.playerY][Main.playerX + 1] == 1)
+        if ((Main.playerX < Main.maze1.mazeMap.length - 1) && Main.maze1.mazeMap[Main.playerY][Main.playerX + 1] == " ")
         Main.playerX++;
         else System.out.println(MoveScanner.error);
 
@@ -14,7 +14,7 @@ static void runExe()
 
     {
 
-        if ((Main.playerX != 0) && Main.maze1.mazeMap[Main.playerY][Main.playerX - 1] == 1)
+        if ((Main.playerX != 0) && Main.maze1.mazeMap[Main.playerY][Main.playerX - 1] == " ")
         Main.playerX--;
         else System.out.println(MoveScanner.error);
 
@@ -24,7 +24,7 @@ static void runExe()
 
     {
 
-        if ((Main.playerY != 0) && Main.maze1.mazeMap[Main.playerY - 1][Main.playerX] == 1)
+        if ((Main.playerY != 0) && Main.maze1.mazeMap[Main.playerY - 1][Main.playerX] == " ")
         Main.playerY--;
         else System.out.println(MoveScanner.error);
 
@@ -34,7 +34,7 @@ static void runExe()
 
     {
 
-        if ((Main.playerY < Main.maze1.mazeMap.length - 1) && Main.maze1.mazeMap[Main.playerY + 1][Main.playerX] == 1)
+        if ((Main.playerY < Main.maze1.mazeMap.length - 1) && Main.maze1.mazeMap[Main.playerY + 1][Main.playerX] == " ")
         Main.playerY++;
         else System.out.println(MoveScanner.error);
 
@@ -49,8 +49,8 @@ static void runExe()
         {
             System.out.println(MoveScanner.badWord);
         }
-    Main.maze1.mazeMap[Main.oldPlayerY][Main.oldPlayerX] = 1;
-    Main.maze1.mazeMap[Main.playerY][Main.playerX] = 3;
+    Main.maze1.mazeMap[Main.oldPlayerY][Main.oldPlayerX] = " ";
+    Main.maze1.mazeMap[Main.playerY][Main.playerX] = "O";
 
 
 
