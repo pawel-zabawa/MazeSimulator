@@ -1,4 +1,4 @@
 public class StepLog {
-    String[] steps = new String[999999999];
-
+static int[] xStepsLog = new int[300];
+static int[] yStepsLog = new int[300];
 }

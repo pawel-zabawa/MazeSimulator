@@ -11,6 +11,7 @@ public class Generator {
     static Boolean thirdWayState;
     static Boolean fourthWayState;
     static int oldMove;
+    static int falseMark;
 
     static void autoStep()
     {
@@ -30,12 +31,17 @@ public class Generator {
         }
         if (genActualPointX != 0)
         {firstWayState = Main.maze1.mazeMap[genActualPointY][genActualPointX - 1].equals("?");}
+        else firstWayState = false;
         if (genActualPointX < Main.maze1.mazeMap.length-1)
         {secondWayState = Main.maze1.mazeMap[genActualPointY][genActualPointX + 1].equals("?");}
+        else secondWayState = false;
         if (genActualPointY != 0)
         {thirdWayState = Main.maze1.mazeMap[genActualPointY - 1][genActualPointX].equals("?");}
+        else thirdWayState = false;
         if (genActualPointY < Main.maze1.mazeMap.length-1)
         {fourthWayState = Main.maze1.mazeMap[genActualPointY + 1][genActualPointX].equals("?");}
+        else fourthWayState = false;
+
 
         Ways way1 = new Ways(genActualPointY,(genActualPointX-1), firstWayState);
         Ways way2 = new Ways(genActualPointY,(genActualPointX+1), secondWayState);
@@ -46,7 +52,7 @@ public class Generator {
         randomWaysResult = random.nextInt(4);
         randomCache = randomWaysResult;
         System.out.println(randomWaysResult);
-        if (randomWaysResult == 0 && firstWayState == true)
+        if ((randomWaysResult == 0) && (firstWayState == true))
         {
             oldPointX = genActualPointX;
             oldPointY = genActualPointY;
@@ -61,7 +67,7 @@ public class Generator {
             if ((Main.playerY < 10 && Main.playerY > 0)&&(Main.playerX < 10 && Main.playerX > 0 ))Main.maze1.mazeMap[Main.playerY][Main.playerX] = "O";
             oldMove = randomWaysResult;
         }
-        else if (randomWaysResult == 1 && secondWayState == true)
+        else if ((randomWaysResult == 1) && (secondWayState == true))
         {
             oldPointX = genActualPointX;
             oldPointY = genActualPointY;
@@ -76,7 +82,7 @@ public class Generator {
             if ((Main.playerY < 10 && Main.playerY > 0)&&(Main.playerX < 10 && Main.playerX > 0 ))Main.maze1.mazeMap[Main.playerY][Main.playerX] = "O";
             oldMove = randomWaysResult;
         }
-        else if (randomWaysResult == 2 && thirdWayState == true)
+        else if ((randomWaysResult == 2) && (thirdWayState == true))
         {
             oldPointX = genActualPointX;
             oldPointY = genActualPointY;
@@ -91,7 +97,7 @@ public class Generator {
             if ((Main.playerY < 10 && Main.playerY > 0)&&(Main.playerX < 10 && Main.playerX > 0 ))Main.maze1.mazeMap[Main.playerY][Main.playerX] = "O";
             oldMove = randomWaysResult;
         }
-        else if (randomWaysResult == 3 && fourthWayState == true)
+        else if ((randomWaysResult == 3) && (fourthWayState == true))
         {
             oldPointX = genActualPointX;
             oldPointY = genActualPointY;
@@ -106,14 +112,16 @@ public class Generator {
             if ((Main.playerY < 10 && Main.playerY > 0)&&(Main.playerX < 10 && Main.playerX > 0 ))Main.maze1.mazeMap[Main.playerY][Main.playerX] = "O";
             oldMove = randomWaysResult;
         }
-        if (firstWayState == false && secondWayState == false && thirdWayState == false && fourthWayState == false)
+        else if (firstWayState == false && secondWayState == false && thirdWayState == false && fourthWayState == false)
         {
-            genActualPointX = oldPointX;
-            genActualPointY = oldPointY;
-            oldPointX--;
-            oldPointY--;
+            falseMark = 1;
+            genActualPointX = StepLog.xStepsLog[Main.stepsCounter-1];
+            genActualPointY = StepLog.yStepsLog[Main.stepsCounter-1];
+            Main.playerX = genActualPointX;
+            Main.playerY = genActualPointY;
+            Main.stepsCounter--;
         }
-
+        else falseMark = 0;
     }
 
 }
