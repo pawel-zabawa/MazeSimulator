@@ -1,5 +1,3 @@
-import javax.swing.*;
-import java.awt.event.KeyListener;
 
 public class Maze {
     int x;
@@ -25,7 +23,7 @@ public class Maze {
     }
 
 
-    void getMap() throws InterruptedException {
+    void getMap() {
         for (int i = 0; i < y; i++) {
             System.out.println();
             for (int j = 0; j < x; j++) {
